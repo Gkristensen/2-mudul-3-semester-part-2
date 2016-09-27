@@ -16,6 +16,15 @@
 	echo 'n='.$n.'<br>'.PHP_EOL;
 	echo 'a='.$a.'<br>'.PHP_EOL;
 	echo 'e='.$e.'<br>'.PHP_EOL;
+	
+	//$sql = 'insert into persons (name, email, age) values ('Gabriel', 'gabriel@gabrielkristensen.com', 28)';
+	//$sql = 'INSERT INTO persons (name, email, age) VALUES ("'.?.'", "'.?.'", '.?.')';
+	//echo $sql;
+	
+	require_once 'databace-requier-once.php';
+	$stmt = $link->perpare($sql);
+	$stmt->bind_param('ssi', $n, $e, $a);
+	$stmt->execute ();
 ?>
 </body>
 </html>
